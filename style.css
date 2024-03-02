@@ -3,7 +3,6 @@ body {
     padding: 0;
     overflow: hidden;
     background: #d4a373;
-    min-width: 480px;
 }
 
 .content::after,
@@ -21,16 +20,31 @@ body {
     align-items: center;
     margin: 0;
     overflow: hidden;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -o-transition: 0.2s;
-    -ms-transition: 0.2s;
-    transition: 0.2s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
 }
 
 .content:active ._block {
     height: 22vh;
 }
+
+/* The following block is to make the hover effect better but impacts mobile screen effects*/
+/* 
+.content:hover ._block {
+    height: 20vh;
+}
+
+.content:hover ._block:hover {
+    height: 40vh;
+}
+
+.content:hover ._block:active {
+    height: 34vh;
+} 
+*/
 
 ._block:nth-of-type(1) {
     background: #ccd5ae;
@@ -70,20 +84,19 @@ body {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
     /* Center the spoiler text */
-    width: 50px;
+    transform: translate(-50%, 200%);
     height: 20px;
     text-align: center;
     font-family: script, cursive;
     font-size: 10pt;
     color: #dddddd;
     opacity: 0;
-    -webkit-transition: 0.2s;
-    -moz-transition: 0.2s;
-    -o-transition: 0.2s;
-    -ms-transition: 0.2s;
-    transition: 0.2s;
+    -webkit-transition: 0.3s;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -ms-transition: 0.3s;
+    transition: 0.3s;
 }
 
 ._block:nth-of-type(2) ._spoiler {
@@ -101,6 +114,4 @@ body {
 
 .f1-image {
     width: 80px;
-    right: 2.7rem;
-    position: relative;
 }
