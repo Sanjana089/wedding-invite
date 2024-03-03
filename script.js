@@ -1,36 +1,44 @@
 
-function toggleClass(obj, cls){
+function toggleClass(obj, cls) {
   var currentClass = obj.className,
-      reg = new RegExp(cls, 'gi');
-  if(reg.test(currentClass)){
-   obj.className = currentClass.replace(cls, '');
+    reg = new RegExp(cls, 'gi');
+  if (reg.test(currentClass)) {
+    obj.className = currentClass.replace(cls, '');
   } else {
     obj.className += cls;
   }
 }
 
 var block = document.querySelectorAll('._block');
-var content =  document.querySelector('.content');
+var content = document.querySelector('.content');
 var aud = document.querySelector('audio');
-var spoiler = document.querySelectorAll('._spoiler');
 
-for(var i=0; i<block.length; i++){
-  block[i].onclick = function(){
-    for(var it=0; it<block.length; it++){
-      block[it].className = '_block';
-      spoiler[it].style.opacity = 1;
-    };
-    
-    content.className = 'content  __open';
-    toggleClass(this, ' __active');
-    
-    document.querySelector('._block.__active').onclick = function(){
-      toggleClass(this, ' __active');
-      toggleClass(content, ' __open');
+document.addEventListener('click', function (event) {
+  if (event.target.classList.contains('_block') && !event.target.classList.contains('f3-image')) {
+    var clickedBlock = event.target;
+    var content = document.querySelector('.content');
+    content.classList.add('__open');
+    clickedBlock.classList.add('__active');
 
-      for(var it=0; it<spoiler.length; it++){
-        spoiler[it].style.opacity = 0;
-      };
-    }
+    document.addEventListener('click', function (event) {
+      // Check if the clicked element is a block with __active class
+      if (event.target.classList.contains('close')) {
+        // Remove __active class from clicked block
+        clickedBlock.classList.remove('__active');
+        // Remove __open class from content
+        var content = document.querySelector('.content');
+        content.classList.remove('__open');
+      }
+    });
   }
+});
+
+
+function toggleText(index) {
+  const photos = document.querySelectorAll('.photo');
+  const hrs = document.querySelectorAll('.hr');
+  const texts = document.querySelectorAll('.text');
+  photos[index].classList.toggle('active');
+  hrs[index].classList.add('grow');
+  texts[index].classList.add('show');
 }

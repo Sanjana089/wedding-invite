@@ -5,6 +5,8 @@ body {
     background: #fff3b0;
     font-family: script, cursive;
     color: #fff3b0;
+    /* Remove blue highlighting effect */
+    -webkit-tap-highlight-color: transparent;
 }
 
 .content::after,
@@ -83,47 +85,16 @@ body {
     opacity: 1;
 }
 
-._spoiler {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* Center the spoiler text */
-    transform: translate(-50%, 250%);
-    height: 20px;
-    text-align: center;
-    font-family: script, cursive;
-    font-size: 10pt;
-    margin-top: 2rem;
-    color: #dddddd;
-    opacity: 0;
-    -webkit-transition: 0.3s;
-    -moz-transition: 0.3s;
-    -o-transition: 0.3s;
-    -ms-transition: 0.3s;
-    transition: 0.3s;
-}
-
-._block:nth-of-type(2) ._spoiler {
-    color: #471B1D;
-}
-
-._block:nth-of-type(3) ._spoiler {
-    color: #471B1D;
-}
-
-._block:hover ._spoiler,
-._block:hover ._spoiler img {
-    opacity: 1;
-}
-
 .f1-image {
     width: 80px;
     opacity: 1;
     transition: opacity 0.3s ease-in;
 }
+
 .content.__open ._content {
     opacity: 0;
 }
+
 .content.__open .f1-image {
     opacity: 0;
     height: 0px;
@@ -134,13 +105,14 @@ body {
     height: 0px;
 }
 
-.f1-gif {
+.open-frame {
     width: 100%;
     height: 0vh;
     opacity: 0;
     transition: opacity 0.3s ease-in;
 }
-.content.__open .f1-gif {
+
+.content.__open .open-frame {
     opacity: 1;
     height: 100vh;
 }
@@ -148,6 +120,93 @@ body {
 h2 {
     margin: 0;
 }
+
 .blessings-text {
     color: #540b0e;
+}
+
+._block.__active .open-frame {
+    display: flex;
+}
+
+.container {
+    align-self: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* align-items: center; */
+    margin-left: 1rem;
+    min-width: 90%;
+}
+
+.photo {
+    position: relative;
+    width: 170px;
+    height: 170px;
+    border-radius: 50%;
+    overflow: hidden;
+    transition: outline-offset 0.4s ease;
+    cursor: pointer;
+    margin-top: 2rem;
+    z-index: 1;
+}
+
+.photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    aspect-ratio: 1;
+    outline: 100px solid rgba(0, 0, 0, 0.746);
+    outline-offset: -85px;
+    transition: .4s;
+    cursor: pointer;
+}
+
+.text {
+    position: relative;
+    top: -9rem;
+    right: -12rem;
+    width: 180px;
+    padding: 10px;
+    color: #e09f3e;
+    font-size: 17px;
+    line-height: 1.4;
+    transition: right 0.4s ease;
+    opacity: 0;
+    transition: opacity 2s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+}
+
+.photo.active img {
+    outline: none;
+    outline-offset: 0px;
+}
+
+hr {
+    margin-top: -8rem;
+    margin-bottom: 2rem;
+    padding: 2px 0;
+    border: none;
+    background-color: #e09f3e;
+    position: relative;
+}
+
+.trans--grow {
+    -webkit-transition: all 2s ease-in-out;
+    /* For Safari 3.1 to 6.0 */
+    transition: all 2s ease-in-out;
+    width: 0px;
+}
+
+.grow {
+    width: 72%;
+    margin-left: 6rem;
+}
+
+b {
+    font-size: 21px;
+    text-decoration: underline;
 }
