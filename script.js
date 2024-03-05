@@ -35,10 +35,25 @@ document.addEventListener('click', function (event) {
 
 
 function toggleText(index) {
-  const photos = document.querySelectorAll('.photo');
-  const hrs = document.querySelectorAll('.hr');
-  const texts = document.querySelectorAll('.text');
-  photos[index].classList.toggle('active');
-  hrs[index].classList.add('grow');
-  texts[index].classList.add('show');
+  const bgs = document.querySelectorAll('.f3-item-bg');
+  const bg = bgs[index];
+  const title = document.querySelectorAll('.item_title');
+  const date = document.querySelectorAll('.item_date-box');
+  // Get the current transform style
+  const transformStyle = window.getComputedStyle(bg).getPropertyValue('transform');
+
+  // Check if the element is already scaled
+  if (transformStyle !== 'none') {
+    // If it's already scaled, remove the transform
+    bg.style.webkitTransform = '';
+    bg.style.msTransform = '';
+    bg.style.transform = '';
+  } else {
+    // If it's not scaled, scale it
+    bg.style.webkitTransform = 'scale(10)';
+    bg.style.msTransform = 'scale(10)';
+    bg.style.transform = 'scale(10)';
+  }
+  title[index].style.opacity = '1';
+  date[index].style.opacity = '1';
 }

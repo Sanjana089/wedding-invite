@@ -36,21 +36,6 @@ body {
     height: 22vh;
 }
 
-/* The following block is to make the hover effect better but impacts mobile screen effects*/
-/* 
-.content:hover ._block {
-    height: 20vh;
-}
-
-.content:hover ._block:hover {
-    height: 40vh;
-}
-
-.content:hover ._block:active {
-    height: 34vh;
-} 
-*/
-
 ._block:nth-of-type(1) {
     background: #fff3b0;
 }
@@ -59,11 +44,11 @@ body {
     background: #9e2a2b;
 }
 
-._block:nth-of-type(3) {
+._block:nth-of-type(4) {
     background: #540b0e;
 }
 
-._block:nth-of-type(4) {
+._block:nth-of-type(3) {
     background: #e09f3e;
 }
 
@@ -112,6 +97,21 @@ body {
     transition: opacity 0.3s ease-in;
 }
 
+.f3-bg {
+    background-image: url('f3.png');
+    background-size: 100%;
+}
+
+.f4-bg {
+    background-image: url('f4.jpeg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.venue {
+    width: 100%;
+    height: fit-content;
+}
 .content.__open .open-frame {
     opacity: 1;
     height: 100vh;
@@ -134,7 +134,7 @@ h2 {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* align-items: center; */
+    align-items: center;
     margin-left: 1rem;
     min-width: 90%;
 }
@@ -143,11 +143,9 @@ h2 {
     position: relative;
     width: 170px;
     height: 170px;
-    border-radius: 50%;
     overflow: hidden;
     transition: outline-offset 0.4s ease;
     cursor: pointer;
-    margin-top: 2rem;
     z-index: 1;
 }
 
@@ -156,8 +154,6 @@ h2 {
     height: 100%;
     object-fit: cover;
     aspect-ratio: 1;
-    outline: 100px solid rgba(0, 0, 0, 0.746);
-    outline-offset: -85px;
     transition: .4s;
     cursor: pointer;
 }
@@ -185,28 +181,156 @@ h2 {
     outline-offset: 0px;
 }
 
-hr {
-    margin-top: -8rem;
-    margin-bottom: 2rem;
-    padding: 2px 0;
-    border: none;
-    background-color: #e09f3e;
-    position: relative;
-}
-
-.trans--grow {
-    -webkit-transition: all 2s ease-in-out;
-    /* For Safari 3.1 to 6.0 */
-    transition: all 2s ease-in-out;
-    width: 0px;
-}
-
-.grow {
-    width: 72%;
-    margin-left: 6rem;
-}
-
 b {
     font-size: 21px;
     text-decoration: underline;
+}
+
+.f3-container {
+    width: 1142px;
+    margin: 0 auto;
+}
+
+
+body {
+    background-color: #000;
+}
+
+.f3-box {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: start;
+    -ms-flex-align: start;
+    align-items: flex-start;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+}
+
+.f3-item {
+    -ms-flex-preferred-size: calc(33.33333% - 30px);
+    flex-basis: calc(33.33333% - 30px);
+    margin: 25px 15px;
+    overflow: hidden;
+    border-radius: 28px;
+    display: block;
+    padding: 30px 20px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+
+    background-size: cover;
+    overflow: hidden;
+    position: relative;
+}
+
+.photo-1 {
+    background-image: url('mehndi.jpeg');
+}
+
+.photo-2 {
+    background-image: url('haldi.jpeg');
+}
+
+.photo-3 {
+    background-image: url('sangeet.jpeg');
+}
+
+.f3-item-link:hover,
+.f3-item-link:hover .item_date {
+    text-decoration: none;
+
+    color: #FFF;
+}
+
+.item_title {
+    min-height: 87px;
+    margin: 0 0 25px;
+
+    overflow: hidden;
+
+    font-weight: bold;
+    font-size: 30px;
+    color: #FFF;
+    opacity: 0;
+
+    z-index: 2;
+    position: relative;
+}
+
+.item_date-box {
+    font-size: 18px;
+    color: #FFF;
+    opacity: 0;
+    z-index: 2;
+    position: relative;
+}
+
+.f3-item-bg {
+    height: 128px;
+    width: 128px;
+
+    z-index: 1;
+    position: absolute;
+    top: -75px;
+    right: -75px;
+
+    border-radius: 50%;
+
+    -webkit-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    transition: all .5s ease;
+}
+
+.color1 {
+    background-image: linear-gradient(90deg, #254441, #252f22);
+}
+
+.color2 {
+    background-image: linear-gradient(90deg, #FAA916, #F6A135);
+}
+
+.color3 {
+    background-image: linear-gradient(90deg, #cb6ce6, #9e0d63);
+}
+
+.head {
+    text-decoration: underline;
+    font-size: 28px;
+}
+
+@media only screen and (max-width: 979px) {
+    .f3-item {
+        -ms-flex-preferred-size: calc(50% - 30px);
+        flex-basis: calc(50% - 30px);
+    }
+
+    .item_title {
+        font-size: 24px;
+        opacity: 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .f3-container {
+        width: 96%;
+    }
+
+}
+
+@media only screen and (max-width: 639px) {
+    .f3-item {
+        -ms-flex-preferred-size: 100%;
+        flex-basis: 100%;
+    }
+
+    .item_title {
+        min-height: 72px;
+        line-height: 1;
+        opacity: 0;
+        font-size: 24px;
+    }
+
+    .f3-item-link {
+        padding: 22px 40px;
+    }
+
 }
