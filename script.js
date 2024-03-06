@@ -1,4 +1,3 @@
-
 function toggleClass(obj, cls) {
   var currentClass = obj.className,
     reg = new RegExp(cls, 'gi');
@@ -20,17 +19,18 @@ document.addEventListener('click', function (event) {
     content.classList.add('__open');
     clickedBlock.classList.add('__active');
 
-    document.addEventListener('click', function (event) {
-      // Check if the clicked element is a block with __active class
-      if (event.target.classList.contains('close')) {
-        // Remove __active class from clicked block
-        clickedBlock.classList.remove('__active');
-        // Remove __open class from content
-        var content = document.querySelector('.content');
-        content.classList.remove('__open');
-      }
-    });
+    
   }
+  document.addEventListener('click', function (event) {
+    // Check if the clicked element is a block with __active class
+    if (event.target.classList.contains('close')) {
+      // Remove __active class from clicked block
+      clickedBlock.classList.remove('__active');
+      // Remove __open class from content
+      var content = document.querySelector('.content');
+      content.classList.remove('__open');
+    }
+  });
 });
 
 
@@ -56,4 +56,15 @@ function toggleText(index) {
   }
   title[index].style.opacity = '1';
   date[index].style.opacity = '1';
+}
+
+function toggleHover() {
+  const cardHover = document.querySelector('.close.open-frame.f4-bg .card-hover');
+  const isHovered = cardHover.classList.contains('hovered');
+  
+  if (isHovered) {
+    cardHover.classList.remove('hovered');
+  } else {
+    cardHover.classList.add('hovered');
+  }
 }

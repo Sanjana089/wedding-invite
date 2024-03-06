@@ -297,6 +297,92 @@ body {
     font-size: 28px;
 }
 
+.card-hover {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 0 32px -10px rgba(0, 0, 0, 0.08);
+  }
+  
+  .card-hover .card-hover__content {
+    width: 100%;
+    text-align: center;
+    height: 200px;
+    background-color: #540b0e;
+    padding: 0 0 50px;
+    color: #fff;
+    position: absolute;
+    bottom: 0;
+    /* font-family:'Segoe UI', Tahoma, Geneva,cursive, sans-serif; */
+    left: 0;
+    transform: translateY(0);
+    transition: all 0.35s 0.35s cubic-bezier(0.1, 0.72, 0.4, 0.97);
+    will-change: bottom, background-color, transform, padding;
+    z-index: 1;
+  }
+  
+  .card-hover.hovered .card-hover__content {
+    background-color: #9e2a2b;
+    bottom: 100%;
+    transform: translateY(100%);
+    padding: 50px 0;
+  }
+  
+  .card-hover .card-hover__content::before,
+  .card-hover .card-hover__content::after {
+    content: "";
+    width: 100%;
+    height: 260px;
+    background-color: inherit;
+    position: absolute;
+    left: 0;
+    z-index: -1;
+  }
+  
+  .card-hover .card-hover__content::before {
+    top: -180px;
+    -webkit-clip-path: ellipse(60% 180px at bottom center);
+    clip-path: ellipse(60% 180px at bottom center);
+  }
+  
+  .card-hover .card-hover__content::after {
+    bottom: -180px;
+    -webkit-clip-path: ellipse(60% 180px at top center);
+    clip-path: ellipse(60% 180px at top center);
+  }
+  
+  .card-hover .card-hover__title {
+    font-size: 2rem;
+    margin-bottom: 1em;
+    margin-top: -2.5rem;
+    text-decoration: underline;
+  }
+  
+  .card-hover .card-hover__text {
+    font-size: 1rem;
+    padding-top: 1rem;
+  }
+  
+  .card-hover img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    z-index: -1;
+    transform: scale(1.2);
+  }
+  
+  .card-hover.hovered img {
+    transform: scale(1);
+  }
+  
+
 @media only screen and (max-width: 979px) {
     .f3-item {
         -ms-flex-preferred-size: calc(50% - 30px);
