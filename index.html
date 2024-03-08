@@ -23,9 +23,9 @@
         </div>
         <div class="_block"><!--2-->
             <div class="_content">
-                <h2>The Event</h2>
+                <h2>The Invite</h2>
             </div>
-            <img src="frame2.webp" alt="wedding invite" class="f1-image">
+            <img src="frame2.gif" alt="wedding invite" class="f1-image">
             <img src="f2.gif" alt="wedding invite" class="close open-frame">
         </div>
         <div class="_block"><!--3-->
@@ -36,11 +36,10 @@
             <div class="close open-frame f3-bg">
                 <div class="close container">
 
-                    <div class="f3-container" onclick="toggleText(0)">
+                    <div class="f3-container close">
                         <div class="f3-box">
-                            <div class="f3-item f3-item-link photo-1">
+                            <div class="f3-item f3-item-link photo-1" onclick="toggleText(0)">
                                 <div class="f3-item-bg color1">
-                                    
                                 </div>
                                 <div class="item_title">
                                     <span class="head">Mehndi</span><br><br>
@@ -53,9 +52,9 @@
                         </div>
                     </div>
 
-                    <div class="f3-container" onclick="toggleText(1)">
+                    <div class="f3-container close">
                         <div class="f3-box">
-                            <div class="f3-item f3-item-link photo-2">
+                            <div class="f3-item f3-item-link photo-2" onclick="toggleText(1)">
                                 <div class="f3-item-bg color2"></div>
                                 <div class="item_title">
                                     <span class="head">Haldi</span><br><br>
@@ -69,9 +68,9 @@
                     </div>
 
 
-                    <div class="f3-container" onclick="toggleText(2)">
+                    <div class="f3-container close">
                         <div class="f3-box">
-                            <div class="f3-item f3-item-link photo-3">
+                            <div class="f3-item f3-item-link photo-3" onclick="toggleText(2)">
                                 <div class="f3-item-bg color3"></div>
                                 <div class="item_title">
                                     <span class="head">Sangeet</span><br><br>
@@ -87,13 +86,28 @@
                 </div>
             </div>
         </div>
-        <div class="_block"><!--4-->
+        <div class="_block" onclick="startf4animation()"><!--4-->
             <div class="_content">
                 <h2>The Wedding</h2>
             </div>
             <div class="close open-frame f4-bg">
-                <!-- <img src="venue.gif" alt="The Alderlea" class="venue"> -->
+                <div class="box close">
+                    <div class="title close">
+                        <span class="block close"></span>
+                        <h1 class="theBigDay close">The Big Day</h1>
+                        <h2 class="wed-date venueAnimate close">15 July 2024</h2>
+                    </div>
+
+                    <div class="role close">
+                        <div class="block block2 close"></div>
+                        <p class="venueAnimate close">The Alderlea</p>
+                        <span class="venueAnimate close">40 Elizabeth St.<br>
+                            Brampton ON LRY 1R1<br>
+                            5pm onwards</span>
+                    </div>
+                </div>
             </div>
+            <img src="frame4.webp" alt="wedding invite" class="f1-image">
         </div>
     </div>
     <script src="script.js" type="text/javascript"></script>

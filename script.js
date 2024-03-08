@@ -57,3 +57,34 @@ function toggleText(index) {
   title[index].style.opacity = '1';
   date[index].style.opacity = '1';
 }
+
+function startf4animation() {
+  var block = document.querySelector('.block');
+  var theBigDay = document.querySelector('.theBigDay');
+  var block2 = document.querySelector('.block2');
+  var texts = document.querySelectorAll('.venueAnimate');
+
+  // Remove existing animation class
+  block.classList.remove('animateBlock');
+  theBigDay.classList.remove('animateH1');
+  block2.classList.remove('roleBlock');
+  texts.forEach(text => {
+    text.classList.remove('roleAnimate');
+  })
+
+  // Trigger reflow to restart animation
+  void block.offsetWidth;
+  void theBigDay.offsetWidth;
+  void block2.offsetWidth;
+  texts.forEach(text => {
+    void text.offsetWidth;
+  })
+
+  // Re-add animation class to restart animation
+  block.classList.add('animateBlock');
+  theBigDay.classList.add('animateH1');
+  block2.classList.add('roleBlock');
+  texts.forEach(text => {
+    text.classList.add('roleAnimate');
+  })
+}
