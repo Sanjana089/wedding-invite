@@ -14,8 +14,14 @@ var content = document.querySelector('.content');
 var aud = document.querySelector('audio');
 
 document.addEventListener('click', function (event) {
-  if (event.target.classList.contains('_block') && !event.target.classList.contains('f3-image')) {
-    var clickedBlock = event.target;
+  var clickedBlock = event.target;
+  if (clickedBlock.classList.contains('outer-gifs')) {
+    clickedBlock = event.target.parentElement;
+  } else if (clickedBlock.classList.contains('heading')){
+    clickedBlock = event.target.parentElement.parentElement;
+  }
+  if (clickedBlock.classList.contains('_block') && !clickedBlock.classList.contains('f3-image')) {
+
     var content = document.querySelector('.content');
     content.classList.add('__open');
     clickedBlock.classList.add('__active');
