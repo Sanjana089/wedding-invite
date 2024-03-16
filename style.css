@@ -1,7 +1,8 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:400,500,700|Caveat:300,400,800&display=swap");
 
 html {
-    height: -webkit-fill-available;
+    height: 100vh;  /* standard definition (as fallback) */
+    height: 100dvh; /* dynamic vh will make the trick on iOS */
 }
 
 body {
@@ -11,7 +12,6 @@ body {
     background: #fff3b0;
     height: 100vh;
     height: 100dvh;
-    min-height: -webkit-fill-available;
     font-family: script, cursive;
     color: #fff3b0;
     /* Remove blue highlighting effect */
