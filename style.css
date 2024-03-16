@@ -1,10 +1,17 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:300,400|Poppins:400,500,700|Caveat:300,400,800&display=swap");
 
+html {
+    height: -webkit-fill-available;
+}
+
 body {
     margin: 0;
     padding: 0;
     overflow: hidden;
     background: #fff3b0;
+    height: 100vh;
+    height: 100dvh;
+    min-height: -webkit-fill-available;
     font-family: script, cursive;
     color: #fff3b0;
     /* Remove blue highlighting effect */
@@ -41,7 +48,7 @@ body {
 
 ._block:nth-of-type(1) {
     background: #fff3b0;
-    height: 29vh;
+    height: 25vh;
     justify-content: flex-end;
 }
 
@@ -51,20 +58,21 @@ body {
 
 ._block:nth-of-type(2) {
     background: #9e2a2b;
-    height: 21vh;
+    height: 25vh;
 }
 
 ._block:nth-of-type(3) {
     background: #e09f3e;
-    height: 21vh;
+    height: 25vh;
 }
 
 ._block:nth-of-type(4) {
     background: #540b0e;
-    height: 29vh;
+    height: 25vh;
     padding-top: 1rem;
     justify-content: flex-start;
 }
+
 .content.__open ._block {
     height: 0vh;
     padding: 0;
@@ -135,7 +143,6 @@ body {
     opacity: 1;
     height: 100vh;
     max-height: 100vh;
-    object-fit: cover;
 }
 
 h2 {
